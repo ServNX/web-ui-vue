@@ -1,29 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <v-app>
+      <main-header></main-header>
+
+      <router-view/>
+
+      <v-footer absolue light height="auto">
+        <v-card class="flex" flat tile>
+          <v-card-title class="white" light>
+            <strong class="subheading">Get connected with us on social networks!</strong>
+
+            <v-spacer></v-spacer>
+
+            <v-btn v-for="icon in icons" :key="icon" class="mx-3" light icon>
+              <font-awesome-icon class="footer-social-icon" :icon="['fab', icon]" />
+            </v-btn>
+
+          </v-card-title>
+
+          <v-card-actions class="grey darken-3 justify-center white--text">
+            &copy;2018-2019 &nbsp;<strong>ServNX, LLC</strong>
+          </v-card-actions>
+        </v-card>
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+  import MainHeader from './components/MainHeader';
+
+  export default {
+    name: 'App',
+    data() {
+      return {
+        icons: [
+          'facebook',
+          'twitter',
+          'google-plus',
+          'linkedin',
+          'instagram',
+        ],
+      };
+    },
+    components: {
+      MainHeader,
+    },
+  };
+</script>

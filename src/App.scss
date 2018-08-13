@@ -1,0 +1,30 @@
+@import '~vuetify/dist/vuetify.css';
+@import '~material-design-icons-iconfont/dist/material-design-icons.css';
+@import './scss/variables';
+@import './scss/index';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+}
+
+.application.theme--light {
+  background: #fafafa;
+}
+
+.logo {
+  width: 125px;
+  padding-top: 10px;
+}
+
+.footer-social-icon {
+  font-size: 24px;
+  color: $accent
+}
+
+.headline {
+  font-family: 'Cinzel', serif !important;
+}
