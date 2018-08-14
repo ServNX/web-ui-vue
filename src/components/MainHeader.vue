@@ -1,10 +1,10 @@
 <template>
   <div class="main-header">
-    <v-toolbar>
+    <v-toolbar color="light-blue lighten-3" dark>
       <v-toolbar-title>ServNX</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-toolbar-items>
+      <v-toolbar-items class="hidden-sm-and-down">
 
         <v-btn @click="route('/')" flat>
           Home
