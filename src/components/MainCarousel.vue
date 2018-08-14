@@ -1,6 +1,6 @@
 <template>
   <v-carousel>
-    <v-carousel-item src="@/assets/indiehd-carousel-bg.jpeg">
+    <v-carousel-item :src="items[0].src">
       <v-container fill-height>
         <v-layout column align-center justify-center fill-height>
           <div>
@@ -48,7 +48,7 @@
         items: [
           {
             id: 1,
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            src: require('../assets/indiehd-carousel-bg.jpeg'),
           },
           {
             id: 2,
