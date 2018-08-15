@@ -1,8 +1,13 @@
 @import '~vuetify/dist/vuetify.css';
 @import '~material-design-icons-iconfont/dist/material-design-icons.css';
+@import './scss/spacing-extension.scss';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+
+.application.theme--light {
+  background: #efefef;
+}
 
 .logo {
   width: 175px;
