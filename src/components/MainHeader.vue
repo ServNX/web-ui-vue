@@ -1,7 +1,9 @@
 <template>
   <div class="main-header">
-    <v-toolbar color="light-blue lighten-3" dark>
-      <v-toolbar-title>ServNX</v-toolbar-title>
+    <v-toolbar color="white" light>
+      <v-toolbar-title>
+        <img class="logo" :src="require('../assets/logo.svg')"/>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
