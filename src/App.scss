@@ -1,7 +1,14 @@
 @import '~vuetify/dist/vuetify.css';
 @import '~material-design-icons-iconfont/dist/material-design-icons.css';
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+
 .logo {
   width: 175px;
   padding-top: 35px;
+}
+
+.v-carousel .v-jumbotron__background {
+  background: rgba(0, 0, 0, 0.3);
 }
