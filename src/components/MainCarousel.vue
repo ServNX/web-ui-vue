@@ -67,3 +67,21 @@
     },
   };
 </script>
+
+<style type="scss" scoped>
+ h1, h2, h3, h4, h5, h6 {
+   color: #ffffff;
+   text-shadow: 2px 2px #2c2c2c;
+   font-family: 'Cinzel', serif;
+ }
+
+ h1 {
+   font-size: 30px;
+   font-weight: bold;
+ }
+
+ h2 {
+   font-size: 20px;
+   font-weight: bold;
+ }
+</style>
