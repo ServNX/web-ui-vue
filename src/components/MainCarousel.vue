@@ -11,10 +11,10 @@
           </h1>
 
           <div>
-            <v-btn outline class="mx-0" large color="white">
+            <v-btn outline class="mx-0 mr-3" large color="white">
               Read More
             </v-btn>
-            &nbsp;&nbsp;
+
             <v-btn outline class="mx-0" large color="white">
               Next-Gen
             </v-btn>
@@ -28,10 +28,10 @@
       <v-container fill-height>
         <v-layout column align-center justify-center fill-height>
           <div class="pt-6">
-            <v-btn outline class="mx-0" large color="white">
+            <v-btn outline class="mx-0 mr-3" large color="white">
               Read More
             </v-btn>
-            &nbsp;&nbsp;
+
             <v-btn outline class="mx-0" large color="white">
               <font-awesome-icon :icon="['fab', 'discord']" style="font-size: 24px"/>&nbsp; Discord
             </v-btn>
@@ -69,15 +69,16 @@
     color: #ffffff;
     text-shadow: 2px 2px #2c2c2c;
     font-family: 'Cinzel', serif;
-  }
-
-  h1 {
-    font-size: 30px;
     font-weight: bold;
   }
 
-  h2 {
-    font-size: 20px;
-    font-weight: bold;
+  @media screen and (min-width: 1920px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
   }
 </style>
