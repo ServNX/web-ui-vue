@@ -5,15 +5,22 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700');
 
+$site-blue: #00ccff;
+
 .application.theme--light {
   background: #efefef;
 }
 
 .logo {
-  width: 175px;
-  padding-top: 35px;
+  width: 125px;
+  padding-top: 10px;
 }
 
 .v-carousel .v-jumbotron__background {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.footer-social-icon {
+  font-size: 24px;
+  color: $site-blue;
 }
