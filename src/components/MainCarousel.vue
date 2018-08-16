@@ -1,5 +1,5 @@
 <template>
-  <v-carousel>
+  <v-carousel hide-delimiters>
     <v-carousel-item :src="items[0].src">
       <v-container fill-height>
         <v-layout column align-center justify-center fill-height>
@@ -70,6 +70,14 @@
     text-shadow: 2px 2px #2c2c2c;
     font-family: 'Cinzel', serif;
     font-weight: bold;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 18px;
   }
 
   @media screen and (min-width: 1920px) {
