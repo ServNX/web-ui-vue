@@ -1,8 +1,8 @@
 <template>
   <div class="main-header">
-    <v-toolbar color="white" light>
+    <v-toolbar class="grey lighten-5" light>
       <v-toolbar-title>
-        <img class="logo" :src="require('../assets/logo.svg')"/>
+        <img class="logo" :src="require('../assets/logo.png')"/>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
