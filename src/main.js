@@ -10,7 +10,11 @@ import './App.scss';
 
 require('./FaIconLibrary');
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  theme: {
+    accent: '#00ccff',
+  },
+});
 
 Vue.config.productionTip = false;
 
