@@ -7,7 +7,7 @@
           <img src="https://indiehd.com/images/shell/logo.svg"/>
 
           <h1 class="white--text">
-            A simple, do-if-yourself platform for selling their music to fans, digitally.
+            A simple, do-it-yourself platform for selling your music to fans, digitally.
           </h1>
 
           <div>
