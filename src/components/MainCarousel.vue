@@ -7,7 +7,7 @@
           <img src="https://indiehd.com/images/shell/logo.svg"/>
 
           <h1 class="white--text">
-            A simple, do-it-yourself platform for selling your music to fans, digitally.
+            A simple, do-it-yourself platform for selling music to fans, digitally.
           </h1>
 
           <div>
@@ -67,7 +67,7 @@
 <style type="scss" scoped>
   h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
-    text-shadow: 2px 2px #2c2c2c;
+    text-shadow: 1px 1px #2c2c2c;
     font-family: 'Cinzel', serif;
     font-weight: bold;
   }

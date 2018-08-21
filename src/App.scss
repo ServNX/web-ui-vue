@@ -1,14 +1,18 @@
 @import '~vuetify/dist/vuetify.css';
 @import '~material-design-icons-iconfont/dist/material-design-icons.css';
-@import './scss/spacing-extension.scss';
+@import './scss/index';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700');
 
 $site-blue: #00ccff;
 
+h1, h2 {
+  font-family: 'Cinzel', serif;
+}
+
 .application.theme--light {
-  background: #efefef;
+  background: #fafafa;
 }
 
 .logo {
@@ -16,11 +20,24 @@ $site-blue: #00ccff;
   padding-top: 10px;
 }
 
-.v-carousel .v-jumbotron__background {
-  background: rgba(0, 0, 0, 0.2);
-}
-
 .footer-social-icon {
   font-size: 24px;
   color: $site-blue;
+}
+
+.headline {
+  font-family: 'Cinzel', serif !important;
+}
+
+.section {
+  height: 380px;
+
+  .headline {
+    font-size: 42px !important;
+    text-shadow: 1px 1px #2c2c2c;
+  }
+
+  h1, h2 {
+    text-shadow: 1px 1px #2c2c2c;
+  }
 }

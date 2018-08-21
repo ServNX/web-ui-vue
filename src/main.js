@@ -12,7 +12,7 @@ require('./FaIconLibrary');
 
 Vue.use(Vuetify, {
   theme: {
-    accent: '#00ccff',
+    accent: '#0dc8df',
   },
 });
 
