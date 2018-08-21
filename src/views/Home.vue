@@ -164,9 +164,9 @@
           UNIT3D
         </h1>
 
-        <span class="subheading white--text">
+        <h2 class="white--text">
             Next Generation Torrent Tracker Platform!
-        </span>
+        </h2>
 
         <div class="mt-5">
           <v-btn outline class="mx-0 mr-3" large color="white">
