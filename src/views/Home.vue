@@ -31,7 +31,7 @@
           <h2 class="headline">The best way to start developing</h2>
 
           <span class="subheading">
-            Join the ServNX Team Now!
+            Find your project today!
           </span>
         </div>
       </v-flex>
@@ -45,14 +45,20 @@
                   <v-icon x-large color="accent">color_lens</v-icon>
                 </v-card-text>
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline text-xs-center">Material Design</div>
+                  <div class="headline text-xs-center">UI Design</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                  turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt.
-                  Suspendisse potenti.
+                  <p>
+                    Frontend designers and developers are always needed in almost every project.
+                    We can help you find the perfect project for you to contribute to.
+                  </p>
+
+                  <p>
+                  Contributing to a project through a referral here leads to a higher
+                  chance of being recruited as a organization team member.
+                  </p>
+
+                  <v-btn outline color="accent">Frontend Projects</v-btn>
                 </v-card-text>
               </v-card>
             </v-flex>
@@ -62,31 +68,43 @@
                   <v-icon x-large color="accent">flash_on</v-icon>
                 </v-card-text>
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Fast development</div>
+                  <div class="headline">Rapid Development</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                  turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt.
-                  Suspendisse potenti.
+                  <p>
+                    Some developers just prefer to use framworks for rapid development.
+                    Frameworks like <strong>React, Laravel, VueJS, Symfony, etc ...</strong>
+                    are only a few popular ones.
+                  </p>
+
+                  <p>
+                    We can help you find the right project for your framework of choice.
+                  </p>
+
+                  <v-btn outline color="accent">Framework Projects</v-btn>
                 </v-card-text>
               </v-card>
             </v-flex>
             <v-flex xs12 md4>
               <v-card class="elevation-0 transparent">
                 <v-card-text class="text-xs-center">
-                  <v-icon x-large color="accent">build</v-icon>
+                  <v-icon x-large color="accent">code</v-icon>
                 </v-card-text>
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline text-xs-center">Completely Open Sourced</div>
+                  <div class="headline text-xs-center">Beginners</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                  turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt.
-                  Suspendisse potenti.
+                  <p>
+                    Maybe you are just getting started and you have no idea how to
+                    collaborate with a team. No worries, we have you covered!
+                  </p>
+
+                  <p>
+                    Learn while collaborating with project managers directly. These projects are
+                    specifically designed to help you learn how to work with a team!
+                  </p>
+
+                  <v-btn outline color="accent">Beginner Projects</v-btn>
                 </v-card-text>
               </v-card>
             </v-flex>
