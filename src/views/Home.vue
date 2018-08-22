@@ -2,7 +2,7 @@
   <div class="home" style="min-height: 900px">
     <!--<main-carousel></main-carousel>-->
 
-    <section>
+    <section class="white">
       <v-layout class="section grad-cool-blues" column align-center justify-center fill-height>
 
         <div class="headline white--text mb-3 text-xs-center">
@@ -43,28 +43,6 @@
       </v-card-title>
 
     </v-card>
-
-    <!--<section>
-      <v-layout class="section grad-azure-pop" column align-center justify-center>
-
-        <img src="https://indiehd.com/images/shell/logo.svg"/>
-
-        <h1 class="white&#45;&#45;text" style="font-size: 35px">
-          A simple, do-it-yourself platform for selling music to fans, digitally.
-        </h1>
-
-        <div class="mt-5">
-          <v-btn outline class="mx-0 mr-3" large color="white">
-            Read More
-          </v-btn>
-
-          <v-btn outline class="mx-0" large color="white">
-            Next-Gen
-          </v-btn>
-        </div>
-
-      </v-layout>
-    </section>-->
 
     <v-layout
       column
@@ -157,14 +135,14 @@
       </v-flex>
     </v-layout>
 
-    <section>
+    <!--<section>
       <v-layout class="section grad-lawrencium" column align-center justify-center>
 
-        <h1 class="white--text" style="font-size: 35px">
+        <h1 class="white&#45;&#45;text" style="font-size: 35px">
           UNIT3D
         </h1>
 
-        <h2 class="white--text">
+        <h2 class="white&#45;&#45;text">
             Next Generation Torrent Tracker Platform!
         </h2>
 
@@ -181,8 +159,32 @@
         </div>
 
       </v-layout>
-    </section>
+    </section>-->
+    <section>
+      <v-layout column align-center justify-center>
+        <h1 class="section-header">Featured Project Of The Day</h1>
+      </v-layout>
 
+      <v-layout class="section grad-expresso" column align-center justify-center>
+
+        <img src="https://indiehd.com/images/shell/logo.svg"/>
+
+        <h1 class="white--text" style="font-size: 35px">
+          A simple, do-it-yourself platform for selling music to fans, digitally.
+        </h1>
+
+        <div class="mt-5">
+          <v-btn outline class="mx-0 mr-3" large color="white">
+            Read More
+          </v-btn>
+
+          <v-btn outline class="mx-0" large color="white">
+            Next-Gen
+          </v-btn>
+        </div>
+
+      </v-layout>
+    </section>
   </div>
 </template>
 

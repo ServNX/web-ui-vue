@@ -5,7 +5,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700');
 
-$site-blue: #00ccff;
+
+$accent: #0dc8df;
 
 h1, h2 {
   font-family: 'Cinzel', serif;
@@ -22,11 +23,21 @@ h1, h2 {
 
 .footer-social-icon {
   font-size: 24px;
-  color: $site-blue;
+  color: $accent
 }
 
 .headline {
   font-family: 'Cinzel', serif !important;
+}
+
+.section-header {
+  font-size: 35px;
+  font-family: 'Cinzel', serif;
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 5px solid #b1b1b1;
+  border-bottom-right-radius: 50% 20%;
+  border-bottom-left-radius: 50% 20%;
 }
 
 .section {
