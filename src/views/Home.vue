@@ -1,7 +1,5 @@
 <template>
   <div class="home" style="min-height: 900px">
-    <!--<main-carousel></main-carousel>-->
-
     <section class="white">
       <v-layout class="section grad-cool-blues" column align-center justify-center fill-height>
 
@@ -34,7 +32,13 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn outline class="mx-0" large color="accent">
+        <v-btn outline
+               large
+               class="mx-0"
+               color="accent"
+               href="https://discord.gg/9BJZW9a"
+               target="_blank"
+        >
           <font-awesome-icon class="mr-2" :icon="['fab', 'discord']" style="font-size: 24px"/>
           Join Our
           Discord Now!
@@ -45,10 +49,10 @@
     </v-card>
 
     <v-layout
-      column
-      wrap
-      class="my-5"
-      align-center
+        column
+        wrap
+        class="my-5"
+        align-center
     >
       <v-flex xs12 sm4 class="my-3">
         <div class="text-xs-center">
@@ -189,12 +193,8 @@
 </template>
 
 <script>
-  import MainCarousel from '../components/MainCarousel';
-
   export default {
     name: 'Home',
-    components: {
-      MainCarousel,
-    },
+    components: {},
   };
 </script>
