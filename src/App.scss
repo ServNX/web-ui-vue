@@ -1,12 +1,11 @@
 @import '~vuetify/dist/vuetify.css';
 @import '~material-design-icons-iconfont/dist/material-design-icons.css';
+@import './scss/variables';
 @import './scss/index';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700');
 
-
-$accent: #0dc8df;
 
 h1, h2 {
   font-family: 'Cinzel', serif;

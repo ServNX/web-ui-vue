@@ -139,62 +139,44 @@
       </v-flex>
     </v-layout>
 
-    <!--<section>
-      <v-layout class="section grad-lawrencium" column align-center justify-center>
-
-        <h1 class="white&#45;&#45;text" style="font-size: 35px">
-          UNIT3D
-        </h1>
-
-        <h2 class="white&#45;&#45;text">
-            Next Generation Torrent Tracker Platform!
-        </h2>
-
-        <div class="mt-5">
-          <v-btn outline class="mx-0 mr-3" large color="white">
-            <font-awesome-icon class="mr-2" :icon="['fab', 'github']" style="font-size: 24px"/>
-            Github
-          </v-btn>
-
-          <v-btn outline class="mx-0" large color="white">
-            <font-awesome-icon class="mr-2" :icon="['fab', 'discord']" style="font-size: 24px"/>
-            Discord
-          </v-btn>
-        </div>
-
-      </v-layout>
-    </section>-->
-    <section>
-      <v-layout column align-center justify-center>
-        <h1 class="section-header">Featured Project Of The Day</h1>
-      </v-layout>
-
-      <v-layout class="section grad-expresso" column align-center justify-center>
-
-        <img src="https://indiehd.com/images/shell/logo.svg"/>
-
-        <h1 class="white--text" style="font-size: 35px">
-          A simple, do-it-yourself platform for selling music to fans, digitally.
-        </h1>
-
-        <div class="mt-5">
-          <v-btn outline class="mx-0 mr-3" large color="white">
-            Read More
-          </v-btn>
-
-          <v-btn outline class="mx-0" large color="white">
-            Next-Gen
-          </v-btn>
-        </div>
-
-      </v-layout>
-    </section>
+    <nx-featured-project :color="featured.color"
+                         :logo="featured.logo"
+                         :description="featured.description"
+                         :actions="featured.actions"
+    />
   </div>
 </template>
 
 <script>
+  import NxFeaturedProject from '@/components/FeaturedProject';
+
   export default {
     name: 'Home',
-    components: {},
+
+    components: {
+      NxFeaturedProject,
+    },
+
+    data() {
+      return {
+        featured: {
+          color: 'grad-expresso',
+          logo: 'https://indiehd.com/images/shell/logo.svg',
+          description: 'A simple, do-it-yourself platform for selling music to fans, digitally.',
+          actions: [
+            {
+              value: 'GitHub',
+              url: 'https://github.com/indiehd',
+              icon: ['fab', 'github'],
+            },
+            {
+              value: 'Read More',
+              url: 'https://github.com/indiehd',
+            },
+          ],
+        },
+      };
+    },
+
   };
 </script>
