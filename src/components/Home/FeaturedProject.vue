@@ -1,9 +1,7 @@
 <template>
   <section class="featured-project">
 
-    <v-layout column align-center justify-center>
-      <h1 class="section-header">Featured Project Of The Day</h1>
-    </v-layout>
+    <nx-section-header text="Featured Project Of The Day"/>
 
     <v-layout :class="`featured-project-content ${color}`"
               column
@@ -41,7 +39,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @import '../scss/variables';
+  @import '../../scss/variables';
 
   .featured-project {
     background-color: #ffffff;
@@ -65,8 +63,13 @@
 </style>
 
 <script>
+  import NxSectionHeader from '../SectionHeader';
+
   export default {
     name: 'nx-featured-project',
+    components: {
+      NxSectionHeader,
+    },
     props: {
       color: { type: String, default: 'grad-cool-blues' },
       logo: { type: String, default: null },

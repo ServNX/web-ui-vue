@@ -28,26 +28,3 @@ h1, h2 {
 .headline {
   font-family: 'Cinzel', serif !important;
 }
-
-.section-header {
-  font-size: 35px;
-  font-family: 'Cinzel', serif;
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 5px solid #b1b1b1;
-  border-bottom-right-radius: 50% 20%;
-  border-bottom-left-radius: 50% 20%;
-}
-
-.section {
-  height: 380px;
-
-  .headline {
-    font-size: 42px !important;
-    text-shadow: 1px 1px #2c2c2c;
-  }
-
-  h1, h2 {
-    text-shadow: 1px 1px #2c2c2c;
-  }
-}
