@@ -89,6 +89,12 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+  .login {
+    min-height: 500px;
+  }
+</style>
+
 <script>
   export default {
     data() {
@@ -101,7 +107,7 @@
         name: '',
         nameRules: [
           v => !!v || 'Display name is required',
-          v => v.length >= 8 || 'Must be at least 8 characters long',
+          v => v.length >= 4 || 'Must be at least 4 characters long',
         ],
 
         email: '',
