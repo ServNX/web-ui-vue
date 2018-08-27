@@ -11,6 +11,13 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
+    // allow v => true
+    // instead of forcing (v) => { return true; }
+    'arrow-parens': 'off',
+
+    // allow returns inside body blocks
+    'arrow-body-style': 'off',
+
     'indent': 'off',
     'vue/script-indent': ['error', 2, {
       'baseIndent': 1
