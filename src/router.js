@@ -4,7 +4,7 @@ import Home from './views/Home';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -38,5 +38,36 @@ export default new Router({
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ './views/Login.vue'),
     },
+    {
+      path: '/logout',
+      name: 'logout',
+    },
+    {
+      path: '/admin/dashboard',
+      name: 'admin-dashboard',
+      secure: true,
+      component: () => import(/* webpackChunkName: "login" */ './views/Admin/Dashboard.vue'),
+    },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  // Look at all routes
+  router.options.routes.forEach((route) => {
+    // Logout
+    if (to.matched[0].name === 'logout') {
+      // do whatever we need to do to logout ??
+      Vue.axios.get(`${process.env.VUE_APP_API_ENDPOINT}/logout`).then(() => next('/login'));
+    }
+
+    // If this is the current route and it's secure
+    if (to.matched[0].path === route.path && route.secure) {
+      Vue.axios.get(`${process.env.VUE_APP_API_ENDPOINT}/verify`).catch(() => next('/login'));
+    }
+
+    // Proceed as normal
+    return next();
+  });
+});
+
+export default router;
