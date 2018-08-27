@@ -4,15 +4,17 @@ import VueAxios from 'vue-axios';
 import Vuetify from 'vuetify';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome/index';
 
-import App from './App';
-import router from './router';
 import store from './store';
+import router from './router';
 
+import App from './App';
 import './App.scss';
 
-require('./FaIconLibrary');
-
 Vue.use(VueAxios, axios);
+
+if (localStorage.access_token) {
+  Vue.axios.defaults.headers.common.Authorization = `Bearer ${localStorage.access_token}`;
+}
 
 Vue.use(Vuetify, {
   theme: {
@@ -23,6 +25,8 @@ Vue.use(Vuetify, {
 Vue.config.productionTip = false;
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+require('./FaIconLibrary');
 
 new Vue({
   router,

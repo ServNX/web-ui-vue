@@ -41,7 +41,6 @@
 
   export default {
     name: 'Home',
-
     components: {
       NxPopularSearches,
       NxCallToAction,

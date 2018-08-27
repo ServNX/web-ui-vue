@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from './store';
 import Home from './views/Home';
 
 Vue.use(Router);
@@ -41,12 +42,13 @@ const router = new Router({
     {
       path: '/logout',
       name: 'logout',
+      component: () => import(/* webpackChunkName: "logout" */ './views/Logout.vue'),
     },
     {
       path: '/admin/dashboard',
       name: 'admin-dashboard',
       secure: true,
-      component: () => import(/* webpackChunkName: "login" */ './views/Admin/Dashboard.vue'),
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Dashboard.vue'),
     },
   ],
 });
@@ -54,15 +56,22 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   // Look at all routes
   router.options.routes.forEach((route) => {
-    // Logout
-    if (to.matched[0].name === 'logout') {
-      // do whatever we need to do to logout ??
-      Vue.axios.get(`${process.env.VUE_APP_API_ENDPOINT}/logout`).then(() => next('/login'));
+    // Login
+    if (to.matched[0].name === 'login') {
+      if (localStorage.access_token) {
+        return next('/admin/dashboard');
+      }
     }
 
     // If this is the current route and it's secure
     if (to.matched[0].path === route.path && route.secure) {
-      Vue.axios.get(`${process.env.VUE_APP_API_ENDPOINT}/verify`).catch(() => next('/login'));
+      store.commit('SET_LAYOUT', 'app-layout');
+
+      if (!localStorage.access_token) {
+        return next('/login');
+      }
+    } else {
+      store.commit('SET_LAYOUT', 'site-layout');
     }
 
     // Proceed as normal

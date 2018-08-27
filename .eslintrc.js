@@ -18,6 +18,8 @@ module.exports = {
     // allow returns inside body blocks
     'arrow-body-style': 'off',
 
+    'no-unused-expressions': 'off',
+
     'indent': 'off',
     'vue/script-indent': ['error', 2, {
       'baseIndent': 1
