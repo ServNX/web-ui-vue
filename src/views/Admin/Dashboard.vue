@@ -7,8 +7,5 @@
 <script>
   export default {
     name: 'nx-admin-dashboard',
-    beforeMount() {
-      this.$store.commit('SET_LAYOUT', 'app-layout');
-    },
   };
 </script>
