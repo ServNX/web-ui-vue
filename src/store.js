@@ -53,6 +53,7 @@ export default new Vuex.Store({
       });
     },
     storeAccessToken({ commit }, token) {
+      Vue.axios.defaults.headers.common.Authorization = `Bearer ${token}`;
       localStorage.setItem('access_token', token);
       commit('SET_ACCESSTOKEN', token);
     },
