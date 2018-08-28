@@ -44,11 +44,20 @@ const router = new Router({
       name: 'logout',
       component: () => import(/* webpackChunkName: "logout" */ './views/Logout.vue'),
     },
+    /**
+     * Protected Application Routes
+     */
     {
       path: '/admin/dashboard',
       name: 'admin-dashboard',
       secure: true,
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Dashboard.vue'),
+    },
+    {
+      path: '/admin/services',
+      name: 'admin-services',
+      secure: true,
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Services.vue'),
     },
   ],
 });
