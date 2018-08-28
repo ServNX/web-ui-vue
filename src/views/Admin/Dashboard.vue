@@ -1,7 +1,7 @@
 <template>
-    <div class="dashboard">
+    <section>
         <h1>Welcome to the dashboard !!</h1>
-    </div>
+    </section>
 </template>
 
 <script>
