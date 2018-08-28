@@ -60,17 +60,28 @@
   }
 </style>
 <script>
+  import { mapActions } from 'vuex';
+
   export default {
     name: 'app-layout',
     data() {
       return {
         drawer: null,
+        services: [],
       };
     },
     methods: {
+      ...mapActions([
+        'storeAccount',
+      ]),
       route($page) {
         this.$router.push($page);
       },
+    },
+    mounted() {
+      this.$nextTick(() => {
+        this.storeAccount();
+      });
     },
   };
 </script>

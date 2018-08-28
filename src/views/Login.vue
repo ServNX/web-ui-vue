@@ -96,7 +96,10 @@
 </style>
 
 <script>
+  import { mapActions } from 'vuex';
+
   export default {
+    name: 'Login',
     data() {
       return {
         tab: 0,
@@ -142,13 +145,18 @@
       },
     },
     methods: {
+      ...mapActions([
+        'storeUserId',
+        'storeAccessToken',
+      ]),
       submit() {
         this.axios.post(`${process.env.VUE_APP_API_ENDPOINT}/${this.type.toLowerCase()}`, {
           name: this.name,
           email: this.email,
           password: this.password,
         }).then((response) => {
-          localStorage.setItem('access_token', response.data.access_token);
+          this.storeUserId(response.data.user.id);
+          this.storeAccessToken(response.data.access_token);
           this.$router.push('/admin/dashboard');
         }).catch((error) => {
           console.log(error.response.data);

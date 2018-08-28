@@ -59,6 +59,12 @@ const router = new Router({
       secure: true,
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Services.vue'),
     },
+    {
+      path: '/admin/services/:service/:path',
+      name: 'admin-dynamic-service',
+      secure: true,
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Service.vue'),
+    },
   ],
 });
 
@@ -75,12 +81,10 @@ router.beforeEach((to, from, next) => {
     // If this is the current route and it's secure
     if (to.matched[0].path === route.path && route.secure) {
       store.commit('SET_LAYOUT', 'app-layout');
-
       if (!localStorage.access_token) {
+        store.commit('SET_LAYOUT', 'site-layout');
         return next('/login');
       }
-    } else {
-      store.commit('SET_LAYOUT', 'site-layout');
     }
 
     // Proceed as normal

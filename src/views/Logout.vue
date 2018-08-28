@@ -10,7 +10,7 @@
     beforeMount() {
       if (localStorage.access_token) {
         this.axios.get(`${process.env.VUE_APP_API_ENDPOINT}/api/logout`).then(() => {
-          localStorage.removeItem('access_token');
+          localStorage.clear();
           this.$router.push('/login');
         });
       } else {
