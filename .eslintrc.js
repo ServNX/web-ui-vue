@@ -21,8 +21,10 @@ module.exports = {
     'no-unused-expressions': 'off',
 
     'indent': 'off',
-    'vue/script-indent': ['error', 2, {
-      'baseIndent': 1
+    'vue/script-indent' : [ 'error', 2, {
+      baseIndent: 1,
+      switchCase: 1,
+      ignores: []
     }],
 
     'vue/html-self-closing': ['error', {
