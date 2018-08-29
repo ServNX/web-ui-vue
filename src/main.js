@@ -12,6 +12,12 @@ import './App.scss';
 
 Vue.use(VueAxios, axios);
 
+if (localStorage.getItem('access_token')) {
+  store.commit('SET_ACCESSTOKEN', localStorage.access_token);
+  Vue.axios.defaults.headers.common.Authorization = `Bearer ${localStorage.access_token}`;
+  Vue.axios.defaults.headers.common['Content-Type'] = 'application/json';
+}
+
 if (localStorage.user_id) {
   store.commit('SET_USER_ID', localStorage.user_id);
 }
