@@ -37,6 +37,9 @@ export default new Vuex.Store({
     token(state) {
       return state.access_token;
     },
+    services(state) {
+      return state.account.services;
+    },
   },
   actions: {
     storeUserId({ commit }, userid) {

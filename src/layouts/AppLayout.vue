@@ -30,6 +30,21 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile v-for="service in services"
+                     :key="service.id"
+                     @click="route(`/admin/services/${service.driver}`)">
+          <v-list-tile-action>
+            <v-icon>code</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>
+              {{ service.driver.toUpperCase() }}
+            </v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
       </v-list>
 
     </v-navigation-drawer>
@@ -67,7 +82,6 @@
     data() {
       return {
         drawer: null,
-        services: [],
       };
     },
     methods: {
@@ -76,6 +90,11 @@
       ]),
       route($page) {
         this.$router.push($page);
+      },
+    },
+    computed: {
+      services() {
+        return this.$store.getters.services;
       },
     },
     mounted() {
