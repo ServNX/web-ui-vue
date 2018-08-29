@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs6>
         <nx-service-card title="Github"
-                         :link="`${link}/api/auth/github/${user_id}`"
+                         :link="`${link}/api/auth/github`"
                          src="https://cdn-images-1.medium.com/max/1200/1*wzEf4qVNT7mUeMIeQWTJbg.jpeg"/>
       </v-flex>
     </v-layout>
