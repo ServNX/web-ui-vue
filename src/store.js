@@ -7,7 +7,9 @@ export default new Vuex.Store({
   state: {
     layout: 'site-layout',
     user_id: null,
-    account: null,
+    account: {
+      services: [],
+    },
     access_token: null,
   },
   mutations: {
