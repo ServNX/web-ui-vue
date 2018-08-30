@@ -63,7 +63,7 @@
         return i > -1;
       },
       link() {
-        return `${process.env.VUE_APP_API_ENDPOINT}/api/auth/${this.services.toLowerCase()}`;
+        return `${process.env.VUE_APP_API_ENDPOINT}/api/auth/${this.service.toLowerCase()}`;
       },
     },
     methods: {
