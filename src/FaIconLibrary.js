@@ -4,6 +4,8 @@ import {
   faMusic,
   faHeadphones,
   faServer,
+  faBug,
+  faCodeBranch,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -29,4 +31,6 @@ library.add(
   faTwitch,
   faDiscord,
   faGithub,
+  faBug,
+  faCodeBranch,
 );
