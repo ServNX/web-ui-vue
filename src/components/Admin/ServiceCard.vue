@@ -3,19 +3,19 @@
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-card-media
-          :src="src"
+          :src="img"
           height="200px"
         >
         </v-card-media>
 
-        <v-card-title primary-title v-if="title">
+        <v-card-title primary-title>
           <div>
-            <div class="headline">{{ title }}</div>
+            <div class="headline">{{ service.toUpperCase() }}</div>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn @click="submit" outline color="accent" :disabled="disabled">Link</v-btn>
+          <v-btn @click="submit" outline color="accent"> {{ exists ? 'Refresh' : 'Link'}}</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show" v-if="description">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -44,11 +44,9 @@
   export default {
     name: 'nx-service-card',
     props: {
-      disabled: { type: Boolean, default: false },
-      title: { type: String, default: null },
       description: { type: String, default: null },
-      src: { type: String, required: true },
-      link: { type: String, required: true },
+      service: { type: String, required: true },
+      img: { type: String, required: true },
     },
     data() {
       return {
@@ -56,6 +54,17 @@
         error: null,
         snackbar: false,
       };
+    },
+    computed: {
+      exists() {
+        const s = this.$store.getters.account.services;
+        const i = s.findIndex(x => x.driver === this.service.toLowerCase());
+
+        return i > -1;
+      },
+      link() {
+        return `${process.env.VUE_APP_API_ENDPOINT}/api/auth/${this.services.toLowerCase()}`;
+      },
     },
     methods: {
       submit() {
