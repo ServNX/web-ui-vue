@@ -4,11 +4,11 @@
 @import './scss/index';
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
 
 h1, h2 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .application.theme--light {
@@ -26,5 +26,5 @@ h1, h2 {
 }
 
 .headline {
-  font-family: 'Cinzel', serif !important;
+  font-family: 'Crimson Text', serif;
 }

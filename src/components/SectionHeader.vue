@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
   .section-header {
     font-size: 35px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Crimson Text', serif;
     padding-bottom: 9px;
     margin: 40px 0 20px;
     border-bottom: 5px solid #b1b1b1;
