@@ -31,19 +31,9 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile v-for="service in services"
-                     :key="service.id"
-                     @click="route(`/admin/services/${service.driver}`)">
-          <v-list-tile-action>
-            <v-icon>code</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{ service.driver.toUpperCase() }}
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <nx-admin-service-menu v-for="service in services"
+                               :key="service.driver"
+                               :item="service"/>
 
       </v-list>
 
@@ -76,9 +66,11 @@
 </style>
 <script>
   import { mapActions } from 'vuex';
+  import NxAdminServiceMenu from '../components/Admin/ServiceMenu';
 
   export default {
     name: 'app-layout',
+    components: { NxAdminServiceMenu },
     data() {
       return {
         drawer: null,
