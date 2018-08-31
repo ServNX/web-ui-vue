@@ -19,7 +19,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="route('/admin/services')">
+        <v-list-tile @click="route('/admin/link')">
           <v-list-tile-action>
             <v-icon>rounded_corner</v-icon>
           </v-list-tile-action>

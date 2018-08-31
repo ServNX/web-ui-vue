@@ -14,7 +14,7 @@
     data() {
       return {
         service: this.$route.params.service,
-        path: this.$route.params.path,
+        path: this.$route.params[0],
         current_props: {},
       };
     },

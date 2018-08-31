@@ -54,13 +54,13 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Dashboard.vue'),
     },
     {
-      path: '/admin/services',
-      name: 'admin-services',
+      path: '/admin/link',
+      name: 'admin-link',
       secure: true,
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Services.vue'),
     },
     {
-      path: '/admin/services/:service/:path',
+      path: '/admin/services/:service/*',
       name: 'admin-dynamic-service',
       secure: true,
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Service.vue'),
