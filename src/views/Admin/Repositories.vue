@@ -1,59 +1,97 @@
 <template>
-  <v-container fluid grid-list-md>
-    <v-data-iterator
+  <section>
+    <v-form>
+      <v-container>
+        <v-layout row wrap>
+
+          <v-flex xs12 sm6 md3>
+            <v-text-field
+              color="accent"
+              label="Search"
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6 md3>
+            <v-text-field
+              color="success"
+              label="New"
+            ></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm6 md3>
+            <v-text-field
+              color="error"
+              label="Delete"
+            ></v-text-field>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-form>
+
+    <v-container fluid grid-list-md>
+      <v-data-iterator
         :items="repositories"
         :rows-per-page-items="rowsPerPageItems"
         :pagination.sync="pagination"
         content-tag="v-layout"
         row
         wrap
-    >
-
-      <v-flex slot="item"
-              slot-scope="props"
-              xs12
-              sm6
-              md4
-              lg3
       >
-        <v-card>
-          <v-card-title class="subheading font-weight-bold">{{ props.item.name }}</v-card-title>
 
-          <v-divider></v-divider>
+        <v-flex slot="item"
+                slot-scope="props"
+                xs12
+                sm6
+                md4
+                lg3
+        >
+          <v-card>
+            <v-card-title class="subheading font-weight-bold">
+              {{ props.item.name }}
+            </v-card-title>
 
-          <v-list dense>
-            <v-list-tile>
-              <v-list-tile-content>Open Issues:</v-list-tile-content>
-              <v-list-tile-content class="align-end">
-                {{ props.item.open_issues }}
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-divider></v-divider>
 
-            <v-list-tile>
-              <v-list-tile-content>Forks:</v-list-tile-content>
-              <v-list-tile-content class="align-end">
-                {{ props.item.forks_count }}
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list dense>
+              <v-list-tile>
+                <v-list-tile-content>Open Issues:</v-list-tile-content>
+                <v-list-tile-content class="align-end">
+                  <v-btn @click="route(item.driver, 'issues')"
+                    flat
+                    small
+                    color="accent"
+                  >
+                    {{ props.item.open_issues }}
+                  </v-btn>
+                </v-list-tile-content>
+              </v-list-tile>
 
-            <v-list-tile>
-              <v-list-tile-content>Stars:</v-list-tile-content>
-              <v-list-tile-content class="align-end">
-                {{ props.item.stargazers_count }}
-              </v-list-tile-content>
-            </v-list-tile>
+              <v-list-tile>
+                <v-list-tile-content>Forks:</v-list-tile-content>
+                <v-list-tile-content class="align-end">
+                  {{ props.item.forks_count }}
+                </v-list-tile-content>
+              </v-list-tile>
 
-            <v-list-tile>
-              <v-list-tile-content>Watchers:</v-list-tile-content>
-              <v-list-tile-content class="align-end">
-                {{ props.item.watchers_count }}
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-card>
-      </v-flex>
-    </v-data-iterator>
-  </v-container>
+              <v-list-tile>
+                <v-list-tile-content>Stars:</v-list-tile-content>
+                <v-list-tile-content class="align-end">
+                  {{ props.item.stargazers_count }}
+                </v-list-tile-content>
+              </v-list-tile>
+
+              <v-list-tile>
+                <v-list-tile-content>Watchers:</v-list-tile-content>
+                <v-list-tile-content class="align-end">
+                  {{ props.item.watchers_count }}
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-card>
+        </v-flex>
+      </v-data-iterator>
+    </v-container>
+  </section>
 </template>
 
 <script>
@@ -71,6 +109,13 @@
         repositories: [],
       };
     },
+    mounted() {
+      this.axios.get(this.all.endpoint, this.all.payload)
+        .then(response => {
+          this.repositories = response.data;
+        })
+        .catch(error => console.log(error));
+    },
     computed: {
       endpoint() {
         return process.env.VUE_APP_API_ENDPOINT;
@@ -78,16 +123,22 @@
       user_id() {
         return this.$store.getters.user_id;
       },
-      repositories_endpoint() {
-        return `${this.endpoint}/api/user/${this.user_id}/services/${this.service}/repositories`;
+      all() {
+        return {
+          endpoint: `${this.endpoint}/api/services/repositories`,
+          payload: {
+            params: {
+              uid: this.user_id,
+              service: this.service.toLowerCase(),
+            },
+          },
+        };
       },
     },
-    mounted() {
-      this.axios.get(this.repositories_endpoint)
-        .then(response => {
-          this.repositories = response.data;
-        })
-        .catch(error => console.log(error));
+    methods: {
+      route(service, path) {
+        this.$router.push(`/admin/services/${service}/${path}`);
+      },
     },
   };
 </script>

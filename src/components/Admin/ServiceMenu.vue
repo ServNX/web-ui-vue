@@ -23,15 +23,6 @@
           </v-list-tile-action>
         </v-list-tile>
 
-        <v-list-tile @click="route(item.driver, 'issues')">
-          <v-list-tile-content>
-            <v-list-tile-title>Issues</v-list-tile-title>
-          </v-list-tile-content>
-
-          <v-list-tile-action>
-            <font-awesome-icon icon="bug"></font-awesome-icon>
-          </v-list-tile-action>
-        </v-list-tile>
       </v-list-group>
     </v-list>
   </section>
