@@ -6,22 +6,22 @@
 
           <v-flex xs12 sm6 md3>
             <v-text-field
-              color="accent"
-              label="Search"
+                color="accent"
+                label="Search"
             ></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm6 md3>
             <v-text-field
-              color="success"
-              label="New"
+                color="success"
+                label="New"
             ></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm6 md3>
             <v-text-field
-              color="error"
-              label="Delete"
+                color="error"
+                label="Delete"
             ></v-text-field>
           </v-flex>
         </v-layout>
@@ -30,12 +30,12 @@
 
     <v-container fluid grid-list-md>
       <v-data-iterator
-        :items="repositories"
-        :rows-per-page-items="rowsPerPageItems"
-        :pagination.sync="pagination"
-        content-tag="v-layout"
-        row
-        wrap
+          :items="repositories"
+          :rows-per-page-items="rowsPerPageItems"
+          :pagination.sync="pagination"
+          content-tag="v-layout"
+          row
+          wrap
       >
 
         <v-flex slot="item"
@@ -56,10 +56,10 @@
               <v-list-tile>
                 <v-list-tile-content>Open Issues:</v-list-tile-content>
                 <v-list-tile-content class="align-end">
-                  <v-btn @click="route(item.driver, 'issues')"
-                    flat
-                    small
-                    color="accent"
+                  <v-btn @click="route('issues', `${props.item.name}/open`)"
+                         flat
+                         small
+                         color="accent"
                   >
                     {{ props.item.open_issues }}
                   </v-btn>
@@ -69,21 +69,39 @@
               <v-list-tile>
                 <v-list-tile-content>Forks:</v-list-tile-content>
                 <v-list-tile-content class="align-end">
-                  {{ props.item.forks_count }}
+                  <v-btn
+                         flat
+                         small
+                         color="accent"
+                  >
+                    {{ props.item.forks_count }}
+                  </v-btn>
                 </v-list-tile-content>
               </v-list-tile>
 
               <v-list-tile>
                 <v-list-tile-content>Stars:</v-list-tile-content>
                 <v-list-tile-content class="align-end">
-                  {{ props.item.stargazers_count }}
+                  <v-btn
+                      flat
+                      small
+                      color="accent"
+                  >
+                    {{ props.item.stargazers_count }}
+                  </v-btn>
                 </v-list-tile-content>
               </v-list-tile>
 
               <v-list-tile>
                 <v-list-tile-content>Watchers:</v-list-tile-content>
                 <v-list-tile-content class="align-end">
-                  {{ props.item.watchers_count }}
+                  <v-btn
+                      flat
+                      small
+                      color="accent"
+                  >
+                    {{ props.item.watchers_count }}
+                  </v-btn>
                 </v-list-tile-content>
               </v-list-tile>
             </v-list>
@@ -102,7 +120,7 @@
     },
     data() {
       return {
-        rowsPerPageItems: [4, 8, 12],
+        rowsPerPageItems: [8, 16, 32],
         pagination: {
           rowsPerPage: 8,
         },
@@ -136,8 +154,14 @@
       },
     },
     methods: {
-      route(service, path) {
-        this.$router.push(`/admin/services/${service}/${path}`);
+      route(component, path = null) {
+        let p = '';
+
+        if (path !== null) {
+          p = `/${path}`;
+        }
+
+        this.$router.push(`/admin/services/${this.service}/${component}${p}`);
       },
     },
   };

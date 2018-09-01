@@ -1,7 +1,7 @@
 <template>
-  <section>
-    <component :is="dynamicComponent" v-bind="current_props"></component>
-  </section>
+    <section>
+        <component :is="dynamicComponent" v-bind="current_props"></component>
+    </section>
 </template>
 
 <script>
@@ -14,7 +14,7 @@
     data() {
       return {
         service: this.$route.params.service,
-        path: this.$route.params[0],
+        path: this.$route.params.component,
         current_props: {},
       };
     },
@@ -28,8 +28,9 @@
             return Repositories;
           case 'issues':
             this.setProps({
-              repo: '',
-              state: '',
+              service: this.service,
+              repo: this.getAdditionalParams()[0],
+              state: this.getAdditionalParams()[1],
             });
             return Issues;
           default:
@@ -40,6 +41,14 @@
     methods: {
       setProps(props) {
         this.current_props = props;
+      },
+      getAdditionalParams() {
+        const params = this.$route.params[0];
+        if (params.includes('/')) {
+          return params.split('/');
+        }
+
+        return params;
       },
     },
   };

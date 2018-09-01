@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      fixed
-      v-model="drawer"
-      app
+        fixed
+        v-model="drawer"
+        app
     >
       <v-list dense>
 
@@ -48,7 +48,7 @@
 
     <v-content>
       <v-container fluid fill-height>
-        <router-view :key="$route.fullPath"></router-view>
+          <router-view :key="$route.fullPath"></router-view>
       </v-container>
     </v-content>
 
@@ -60,6 +60,11 @@
 </template>
 
 <style lang="scss" scoped>
+  .v-content__wrap > .container > section {
+    width: 100%;
+    height: 100%;
+  }
+
   .v-footer.white {
     border-top: 2px #0dc8df solid !important;
   }

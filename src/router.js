@@ -60,8 +60,14 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Services.vue'),
     },
     {
-      path: '/admin/services/:service/*',
-      name: 'admin-dynamic-service',
+      path: '/admin/services/:service/:component',
+      name: 'dynamic-component',
+      secure: true,
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Service.vue'),
+    },
+    {
+      path: '/admin/services/:service/:component/*',
+      name: 'dynamic-component-with-params',
       secure: true,
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Admin/Service.vue'),
     },
