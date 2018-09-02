@@ -1,7 +1,7 @@
 <template>
-    <section>
-        <component :is="dynamicComponent" v-bind="current_props"></component>
-    </section>
+  <section>
+    <component :is="dynamicComponent" v-bind="current_props"></component>
+  </section>
 </template>
 
 <script>
@@ -29,8 +29,14 @@
           case 'issues':
             this.setProps({
               service: this.service,
-              repo: this.getAdditionalParams()[0],
-              state: this.getAdditionalParams()[1],
+
+              repo: Array.isArray(this.getAdditionalParams())
+                ? this.getAdditionalParams()[0]
+                : this.getAdditionalParams(),
+
+              state: Array.isArray(this.getAdditionalParams())
+                ? this.getAdditionalParams()[1]
+                : 'open',
             });
             return Issues;
           default:
