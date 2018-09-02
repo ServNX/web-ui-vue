@@ -9,14 +9,31 @@
     <template slot="items" slot-scope="props">
       <tr @click="props.expanded = !props.expanded">
         <td class="grey--text lighten-5">#{{ props.item.number }}</td>
-        <td class="text-xs-left">{{ props.item.title }}</td>
-        <td class="text-xs-left">{{ props.item.comments }}</td>
+        <td class="text-xs-left">
+          <span class="font-weight-bold" style="font-size: 18px">
+            {{ props.item.title }}
+          </span>
+          <br/>
+          <v-chip v-for="label in props.item.labels" :key="label.name"
+                  label
+                  small
+                  :style="`background-color: #${label.color}`"
+                  text-color="white"
+          >
+            {{ label.name }}
+          </v-chip>
+        </td>
+        <td class="text-xs-left">
+          <v-btn flat color="accent">
+            {{ props.item.comments }}
+          </v-btn>
+        </td>
         <td class="text-xs-left">{{ props.item.user.login }}</td>
       </tr>
     </template>
     <template slot="expand" slot-scope="props">
-      <v-card flat class="grey lighten-5">
-        <v-card-text class="text-xs-center">
+      <v-card flat class="accent lighten-5">
+        <v-card-text>
           {{ props.item.body }}
         </v-card-text>
       </v-card>
