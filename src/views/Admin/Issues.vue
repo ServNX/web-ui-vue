@@ -20,7 +20,7 @@
                   :style="`background-color: #${label.color}`"
                   text-color="white"
           >
-            {{ label.name }}
+            <strong>{{ label.name }}</strong>
           </v-chip>
         </td>
         <td class="text-xs-left">
@@ -28,7 +28,15 @@
             {{ props.item.comments }}
           </v-btn>
         </td>
-        <td class="text-xs-left">{{ props.item.user.login }}</td>
+        <td class="text-xs-left">
+          <v-avatar
+              :tile="true"
+              :size="30"
+              color="grey lighten-4"
+          >
+            <img :src="props.item.user.avatar_url" alt="avatar" />
+          </v-avatar>
+        </td>
       </tr>
     </template>
     <template slot="expand" slot-scope="props">
