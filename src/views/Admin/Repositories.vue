@@ -61,7 +61,7 @@
                          small
                          color="accent"
                   >
-                    {{ props.item.open_issues }}
+                    {{ props.item.open_issues_count }}
                   </v-btn>
                 </v-list-tile-content>
               </v-list-tile>
@@ -87,7 +87,7 @@
                       small
                       color="accent"
                   >
-                    {{ props.item.stargazers_count }}
+                    {{ props.item.stars_count }}
                   </v-btn>
                 </v-list-tile-content>
               </v-list-tile>
