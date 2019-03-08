@@ -11,9 +11,23 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
+    // This rule is stupid
+    'prefer-destructuring':'off',
+
+    // allow v => true
+    // instead of forcing (v) => { return true; }
+    'arrow-parens': 'off',
+
+    // allow returns inside body blocks
+    'arrow-body-style': 'off',
+
+    'no-unused-expressions': 'off',
+
     'indent': 'off',
-    'vue/script-indent': ['error', 2, {
-      'baseIndent': 1
+    'vue/script-indent' : [ 'error', 2, {
+      baseIndent: 1,
+      switchCase: 1,
+      ignores: []
     }],
 
     'vue/html-self-closing': ['error', {

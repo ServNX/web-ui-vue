@@ -34,14 +34,13 @@
 </template>
 
 <script>
-  import NxCallToAction from '@/components/Home/CallToAction';
-  import NxDiscordBar from '@/components/Home/DiscordBar';
-  import NxFeaturedProject from '@/components/Home/FeaturedProject';
+  import NxCallToAction from '../components/Home/CallToAction';
+  import NxDiscordBar from '../components/Home/DiscordBar';
+  import NxFeaturedProject from '../components/Home/FeaturedProject';
   import NxPopularSearches from '../components/Home/PopularSearches';
 
   export default {
     name: 'Home',
-
     components: {
       NxPopularSearches,
       NxCallToAction,
